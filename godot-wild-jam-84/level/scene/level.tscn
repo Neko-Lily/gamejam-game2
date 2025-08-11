@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://o72nobllxw1f"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d1uj5"]
+
+[sub_resource type="Gradient" id="Gradient_iy2u8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6tnn"]
+gradient = SubResource("Gradient_iy2u8")
+width = 1920
+height = 1080
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d1uj5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iy2u8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s6tnn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbjn4"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_d1uj5")
+texture = SubResource("GradientTexture2D_s6tnn")
+
+[node name="border-top" type="StaticBody2D" parent="."]
+position = Vector2(0, -540)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border-top"]
+shape = SubResource("WorldBoundaryShape2D_d1uj5")
+
+[node name="border-bottom" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border-bottom"]
+position = Vector2(0, 539)
+shape = SubResource("WorldBoundaryShape2D_iy2u8")
+
+[node name="border-left" type="StaticBody2D" parent="."]
+position = Vector2(-960, 0)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border-left"]
+shape = SubResource("WorldBoundaryShape2D_s6tnn")
+
+[node name="border-right" type="StaticBody2D" parent="."]
+position = Vector2(961, 0)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border-right"]
+shape = SubResource("WorldBoundaryShape2D_cbjn4")
