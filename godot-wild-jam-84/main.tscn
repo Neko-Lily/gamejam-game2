@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bur7461y78m75"]
+[gd_scene load_steps=4 format=3 uid="uid://bur7461y78m75"]
 
 [ext_resource type="PackedScene" uid="uid://o72nobllxw1f" path="res://level/scene/level.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bkhfiskncyhjd" path="res://entities/player/scene/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dlfa7fhl8msim" path="res://entities/enemies/slime/scene/slime.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D"]
 
@@ -19,3 +20,7 @@ limit_right = 1440
 limit_bottom = 960
 limit_smoothed = true
 editor_draw_limits = true
+
+[node name="slime" parent="." instance=ExtResource("3_h2yge")]
+
+[node name="slime2" parent="." instance=ExtResource("3_h2yge")]
