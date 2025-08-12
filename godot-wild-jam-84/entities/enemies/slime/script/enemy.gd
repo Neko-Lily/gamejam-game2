@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 @export var SPEED = 300
 @export var max_distance_to_player = 80
-
+@onready var sprite = $AnimatedSprite2D
 
 func _process(delta: float) -> void:
 	_move_towards_player(delta)
@@ -16,3 +16,12 @@ func _move_towards_player(delta: float):
 		move_and_slide()
 	else:
 		global_position.move_toward(Vector2(0,0),delta)
+
+	if velocity.x != 0 || velocity.y != 0 :
+		sprite.play("moving") 
+		if velocity.x > 0 :
+			sprite.flip_h =true
+		if velocity.x < 0 :
+			sprite.flip_h= false
+	else:
+		sprite.play("default")

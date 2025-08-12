@@ -22,14 +22,14 @@ Global="*res://globals/global-script.gd"
 [file_customization]
 
 folder_colors={
-"res://entities/enemies/enemy-1/scene/": "purple",
-"res://entities/enemies/enemy-1/script/": "teal",
 "res://entities/enemies/enemy-1/sfx/": "pink",
-"res://entities/enemies/enemy-1/sprite/": "orange",
 "res://entities/enemies/example/scene/": "purple",
 "res://entities/enemies/example/scripts/": "teal",
 "res://entities/enemies/example/sfx/": "pink",
 "res://entities/enemies/example/sprite/": "orange",
+"res://entities/enemies/slime/scene/": "purple",
+"res://entities/enemies/slime/script/": "teal",
+"res://entities/enemies/slime/sprite/": "orange",
 "res://entities/player/scene/": "purple",
 "res://entities/player/scripts/": "teal",
 "res://entities/player/sfx/": "pink",
