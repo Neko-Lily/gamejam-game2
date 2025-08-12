@@ -15,9 +15,17 @@ run/main_scene="uid://bur7461y78m75"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://globals/global-script.gd"
+
 [file_customization]
 
 folder_colors={
+"res://entities/enemies/enemy-1/scene/": "purple",
+"res://entities/enemies/enemy-1/script/": "teal",
+"res://entities/enemies/enemy-1/sfx/": "pink",
+"res://entities/enemies/enemy-1/sprite/": "orange",
 "res://entities/enemies/example/scene/": "purple",
 "res://entities/enemies/example/scripts/": "teal",
 "res://entities/enemies/example/sfx/": "pink",
@@ -31,6 +39,11 @@ folder_colors={
 "res://level/scripts/": "teal",
 "res://level/sound/": "pink"
 }
+
+[global_group]
+
+Player="Player Entity"
+Enemies="Enemy Entities"
 
 [input]
 
