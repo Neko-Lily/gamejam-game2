@@ -96,4 +96,4 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_w1ewg")
 animation = &"moving"
 autoplay = "default"
-frame_progress = 0.000646333
+frame_progress = 0.0124335
