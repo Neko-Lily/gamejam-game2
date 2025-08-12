@@ -18,7 +18,6 @@ func _move_towards_player(delta: float):
 		global_position.move_toward(Vector2(0,0),delta)
 
 	if velocity.x != 0 || velocity.y != 0 :
-		sprite.play("moving") 
 		if velocity.x > 0 :
 			sprite.flip_h =true
 		if velocity.x < 0 :
