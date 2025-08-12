@@ -6,9 +6,16 @@
 [node name="Main" type="Node2D"]
 
 [node name="Level" parent="." instance=ExtResource("1_ig7tw")]
+scale = Vector2(1.5, 2)
 
 [node name="player" parent="." instance=ExtResource("2_0xm2m")]
 speed = 500.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.85, 0.85)
+limit_left = -1440
+limit_top = -960
+limit_right = 1440
+limit_bottom = 960
+limit_smoothed = true
+editor_draw_limits = true

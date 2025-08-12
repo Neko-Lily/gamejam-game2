@@ -1,13 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://o72nobllxw1f"]
+[gd_scene load_steps=6 format=4 uid="uid://o72nobllxw1f"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d1uj5"]
-
-[sub_resource type="Gradient" id="Gradient_iy2u8"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6tnn"]
-gradient = SubResource("Gradient_iy2u8")
-width = 1920
-height = 1080
+[ext_resource type="PackedScene" uid="uid://3fbwmbybcgt0" path="res://level/scene/floor-tiles.tscn" id="1_iy2u8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d1uj5"]
 
@@ -19,22 +12,21 @@ height = 1080
 
 [node name="Level" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-material = SubResource("CanvasItemMaterial_d1uj5")
-texture = SubResource("GradientTexture2D_s6tnn")
+[node name="floor-tiles" parent="." instance=ExtResource("1_iy2u8")]
+position = Vector2(-5.96046e-08, 0)
+tile_map_data = PackedByteArray("AAD6//3/AAABAAEAAAAFAP3/AAADAAEAAAAFAAAAAAADAAIAAAD6/wIAAAABAAMAAAAFAAIAAAADAAMAAAAFAAEAAAADAAIAAAAFAP//AAADAAIAAAAFAP7/AAADAAIAAAAEAAIAAAACAAMAAAADAAIAAAACAAMAAAACAAIAAAACAAMAAAABAAIAAAACAAMAAAAAAAIAAAACAAMAAAD//wIAAAACAAMAAAD+/wIAAAACAAMAAAD9/wIAAAACAAMAAAD8/wIAAAACAAMAAAD7/wIAAAACAAMAAAD6/wEAAAABAAIAAAD6/wAAAAABAAIAAAD6////AAABAAIAAAD6//7/AAABAAIAAAD7//3/AAACAAEAAAD8//3/AAACAAEAAAD9//3/AAACAAEAAAD+//3/AAACAAEAAAD///3/AAACAAEAAAAAAP3/AAACAAEAAAABAP3/AAACAAEAAAACAP3/AAACAAEAAAADAP3/AAACAAEAAAAEAP3/AAACAAEAAAD+////AAACAAIAAAD+//7/AAACAAIAAAD9//7/AAACAAIAAAD8//7/AAACAAIAAAD7//7/AAACAAIAAAD7////AAACAAIAAAD7/wAAAAACAAIAAAD7/wEAAAACAAIAAAD8/wEAAAACAAIAAAD8/wAAAAACAAIAAAD8////AAACAAIAAAD9////AAACAAIAAAD9/wAAAAACAAIAAAD9/wEAAAACAAIAAAD+/wEAAAACAAIAAAD+/wAAAAACAAIAAAD//wAAAAACAAIAAAD/////AAACAAIAAAD///7/AAACAAIAAAAAAP7/AAACAAIAAAAAAP//AAACAAIAAAAAAAAAAAACAAIAAAAAAAEAAAACAAIAAAD//wEAAAACAAIAAAABAAEAAAACAAIAAAABAAAAAAACAAIAAAABAP//AAACAAIAAAABAP7/AAACAAIAAAACAP7/AAACAAIAAAACAP//AAACAAIAAAACAAAAAAACAAIAAAACAAEAAAACAAIAAAADAAEAAAACAAIAAAADAAAAAAACAAIAAAADAP//AAACAAIAAAADAP7/AAACAAIAAAAEAP7/AAACAAIAAAAEAP//AAACAAIAAAAEAAAAAAACAAIAAAAEAAEAAAACAAIAAAA=")
 
 [node name="border-top" type="StaticBody2D" parent="."]
-position = Vector2(0, -540)
+position = Vector2(0, -481)
 rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border-top"]
 shape = SubResource("WorldBoundaryShape2D_d1uj5")
 
 [node name="border-bottom" type="StaticBody2D" parent="."]
+position = Vector2(0, 480)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border-bottom"]
-position = Vector2(0, 539)
 shape = SubResource("WorldBoundaryShape2D_iy2u8")
 
 [node name="border-left" type="StaticBody2D" parent="."]
