@@ -1,23 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://3fbwmbybcgt0"]
+[gd_scene load_steps=13 format=3 uid="uid://3fbwmbybcgt0"]
 
 [ext_resource type="Texture2D" uid="uid://jl7x1877ct4w" path="res://level/art/floor-tiles.png" id="1_fqav3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fqav3"]
+vertices = PackedVector2Array(8, 8, -4, 8, -4, -4, 8, -4)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -4, 8, -4, 8, 8, -4, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vd7yg"]
+vertices = PackedVector2Array(8, 8, -4, 8, -4, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-4, -8, -4, 8, 8, 8, 8, -8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_njyim"]
+vertices = PackedVector2Array(8, 4, -4, 4, -4, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(8, 4, -4, 4, -4, -8, 8, -8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_c5n8i"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -4, 8, -4)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jftux"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sb151"]
+vertices = PackedVector2Array(8, 4, -8, 4, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, 4, 8, 4, 8, -8, -8, -8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0jvs0"]
+vertices = PackedVector2Array(4, 8, -8, 8, -8, -4, 4, -4)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -4, 4, -4, 4, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0t6ji"]
+vertices = PackedVector2Array(4, 8, -8, 8, -8, -8, 4, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(4, -8, 4, 8, -8, 8, -8, -8)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gtbck"]
+vertices = PackedVector2Array(4, 4, -8, 4, -8, -8, 4, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, 4, 4, 4, 4, -8, -8, -8)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fqav3"]
 texture = ExtResource("1_fqav3")
 1:1/0 = 0
+1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fqav3")
 2:1/0 = 0
+2:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_c5n8i")
 3:1/0 = 0
+3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_0jvs0")
 1:2/0 = 0
+1:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vd7yg")
 2:2/0 = 0
+2:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_jftux")
 3:2/0 = 0
+3:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_0t6ji")
 1:3/0 = 0
+1:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_njyim")
 2:3/0 = 0
+2:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_sb151")
 3:3/0 = 0
+3:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_gtbck")
 
 [sub_resource type="TileSet" id="TileSet_vd7yg"]
+navigation_layer_0/layers = 4
 sources/0 = SubResource("TileSetAtlasSource_fqav3")
 
 [node name="floor-tiles" type="TileMapLayer"]
 texture_filter = 1
 scale = Vector2(10, 10)
 tile_set = SubResource("TileSet_vd7yg")
+navigation_enabled = false
