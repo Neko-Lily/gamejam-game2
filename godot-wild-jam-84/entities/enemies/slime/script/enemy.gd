@@ -1,18 +1,23 @@
 extends CharacterBody2D
 
-@onready var player = get_tree().get_first_node_in_group("Player")
-@export var SPEED = 300
-@export var max_distance_to_player = 80
+@onready var target = get_tree().get_first_node_in_group("Player")
+@export var SPEED = 60
+@export var max_distance_to_target = 60
+var max_distance_to_slime = 50
 @onready var sprite = $AnimatedSprite2D
+@onready var slime = $"."
+var health = 3
 
 func _process(delta: float) -> void:
-	_move_towards_player(delta)
+	_move_towards_target(delta)
 
-func _move_towards_player(delta: float):
-	var player_position:Vector2 = Vector2(player.global_position.x, player.global_position.y)
-	velocity = global_position.direction_to(player_position) * SPEED
+func _move_towards_target(delta: float):
+	var target_position:Vector2 = Vector2(target.global_position.x, target.global_position.y)
+	velocity = global_position.direction_to(target_position) * SPEED
 	
-	if global_position.distance_to(player_position) > max_distance_to_player:
+	
+	
+	if global_position.distance_to(target_position) > max_distance_to_target:
 		move_and_slide()
 	else:
 		global_position.move_toward(Vector2(0,0),delta)
@@ -24,3 +29,8 @@ func _move_towards_player(delta: float):
 			sprite.flip_h= false
 	else:
 		sprite.play("default")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass
+	
