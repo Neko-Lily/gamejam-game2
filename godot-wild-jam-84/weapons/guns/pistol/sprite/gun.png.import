@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://31gsgpyb6e6w"
-path="res://.godot/imported/auto-gun.png-1c870b69d6a6d16f11f0944b59ba9333.ctex"
+uid="uid://b44yg8d1vco00"
+path="res://.godot/imported/gun.png-ad77c456d409eac6c870b469d0e60bc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/auto-gun.png"
-dest_files=["res://.godot/imported/auto-gun.png-1c870b69d6a6d16f11f0944b59ba9333.ctex"]
+source_file="res://weapons/guns/pistol/sprite/gun.png"
+dest_files=["res://.godot/imported/gun.png-ad77c456d409eac6c870b469d0e60bc0.ctex"]
 
 [params]
 
