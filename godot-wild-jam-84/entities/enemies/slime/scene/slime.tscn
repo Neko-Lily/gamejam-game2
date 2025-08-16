@@ -1,10 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlfa7fhl8msim"]
+[gd_scene load_steps=10 format=3 uid="uid://dlfa7fhl8msim"]
 
 [ext_resource type="Script" uid="uid://boj3adgef4aas" path="res://entities/enemies/slime/script/enemy.gd" id="1_6bead"]
 [ext_resource type="Texture2D" uid="uid://c26wqsqu6pite" path="res://entities/enemies/slime/sprite/slime-enemy.png" id="2_vppn0"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6bead"]
-radius = 54.3895
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atu11"]
 atlas = ExtResource("2_vppn0")
@@ -61,13 +58,6 @@ motion_mode = 1
 script = ExtResource("1_6bead")
 SPEED = 150
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_6bead")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
@@ -78,5 +68,3 @@ frame_progress = 0.14559
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nbk6u")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

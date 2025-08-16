@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqn1y8btpfm70"]
+
+[ext_resource type="Script" uid="uid://b05ak287tjjic" path="res://weapons/guns/pistol/script/pistol.gd" id="1_1ck7l"]
+[ext_resource type="PackedScene" uid="uid://df2ip2cnw3jlk" path="res://weapons/guns/base-gun/scene/base-gun.tscn" id="2_d7wsu"]
+[ext_resource type="Texture2D" uid="uid://b44yg8d1vco00" path="res://weapons/guns/pistol/sprite/gun.png" id="3_dnhen"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ck7l"]
+
+[node name="Pistol" type="Node2D" node_paths=PackedStringArray("detection")]
+script = ExtResource("1_1ck7l")
+detection = NodePath("enemy_detection")
+
+[node name="enemy_detection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="hit_box" type="CollisionShape2D" parent="enemy_detection"]
+shape = SubResource("CircleShape2D_1ck7l")
+debug_color = Color(0.948907, 0.109893, 0.49762, 0.42)
+
+[node name="Base-gun" parent="." instance=ExtResource("2_d7wsu")]
+
+[node name="pivot" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="pivot"]
+texture_filter = 1
+position = Vector2(81, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("3_dnhen")
+
+[node name="shoot-point" type="Marker2D" parent="pivot"]
+unique_name_in_owner = true
+position = Vector2(102, -8)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

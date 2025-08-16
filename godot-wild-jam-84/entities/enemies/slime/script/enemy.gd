@@ -31,6 +31,8 @@ func _move_towards_target(delta: float):
 		sprite.play("default")
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
+func take_damage():
+	health -= 1
+	if health == 0:
+		queue_free()
 	
