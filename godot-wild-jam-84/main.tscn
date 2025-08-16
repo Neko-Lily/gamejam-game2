@@ -12,6 +12,7 @@ scale = Vector2(1.5, 2)
 
 [node name="player" parent="Level" instance=ExtResource("2_0xm2m")]
 scale = Vector2(0.666667, 0.5)
+platform_floor_layers = 0
 speed = 500.0
 
 [node name="Camera2D" type="Camera2D" parent="Level/player"]

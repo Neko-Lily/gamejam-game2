@@ -38,9 +38,12 @@ folder_colors={
 "res://level/scene/": "purple",
 "res://level/scripts/": "teal",
 "res://level/sound/": "pink",
+"res://weapons/guns/base-gun/scene/": "purple",
 "res://weapons/guns/bullet/scene/": "purple",
+"res://weapons/guns/bullet/script/": "teal",
 "res://weapons/guns/bullet/sprite/": "orange",
 "res://weapons/guns/pistol/scene/": "purple",
+"res://weapons/guns/pistol/script/": "teal",
 "res://weapons/guns/pistol/sprite/": "orange",
 "res://weapons/guns/submachine/scene/": "purple",
 "res://weapons/guns/submachine/sprite/": "orange"
